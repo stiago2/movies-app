@@ -1,0 +1,21 @@
+<mat-toolbar color="warn">
+  <mat-toolbar-row>
+    <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
+    <h1>Movies</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'movies'" routerLinkActive="active">
+        <mat-icon>home</mat-icon>
+        <span>HOME</span>
+      </a>
+      <a mat-button [routerLink]="'add-movie'" routerLinkActive="active">
+        <mat-icon>add</mat-icon>
+        <span>ADD MOVIE</span>
+      </a>
+      <a mat-button [routerLink]="'top-five'" routerLinkActive="active">
+        <mat-icon>list</mat-icon>
+        <span>TOP FIVE</span>
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
