@@ -1,0 +1,11 @@
+.movie-details-container {
+  .movie-details {
+    display: flex;
+    align-items: center;
+    img.movie-image {
+      width: 250px;
+      height: 250px;
+      margin-right: 10px;
+    }
+  }
+}

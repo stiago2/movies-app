@@ -1,0 +1,32 @@
+@import "../../../styles.scss";
+
+.sidenav-container {
+  height: 100%;
+  .sidenav {
+    padding: 30px 20px;
+    top: $navbar-height !important;
+    width: $sidenav-width;
+    .movies-list {
+    }
+  }
+  .sidenav-content {
+    padding: 35px;
+    position: relative;
+    .floating-button {
+      position: absolute;
+      top: 4px;
+      left: 5px;
+    }
+    .movie-details-container {
+      width: 90%;
+      margin: 0 auto;
+      .add-button-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div class="item">
+  <div class="movie-details-container" (click)="onClick()">
+    <h4 class="title">{{ item?.title }}</h4>
+    <div class="description">{{ item?.description }}</div>
+  </div>
+  <div class="actions">
+    <mat-icon (click)="remove($event)">delete</mat-icon>
+  </div>
+</div>

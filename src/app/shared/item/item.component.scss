@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.item {
+  display: flex;
+  border: 1px solid $border-color;
+  padding: 10px;
+  margin-top: 5px;
+  &.selected {
+    background-color: $accent-color;
+  }
+  .movie-details-container {
+    cursor: pointer;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .title {
+      margin-bottom: 5px;
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+}

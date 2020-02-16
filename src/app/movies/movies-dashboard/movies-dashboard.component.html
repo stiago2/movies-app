@@ -1,1 +1,41 @@
-<p>movies-dashboard works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #sidenav
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <div class="movies-list">
+      <item
+        *ngFor="let movie of movies; index as i"
+        [item]="movie"
+        (onSelect)="selectMovie($event)"
+        (onRemove)="removeMovie($event)"
+        [index]="i"
+      ></item>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <button
+      *ngIf="(isHandset$ | async) === true"
+      class="floating-button"
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
+    </button>
+    <div class="movie-details-container">
+      <div class="add-button-container">
+        <button mat-raised-button color="warn" (click)="addMovie($event)">
+          <mat-icon>add</mat-icon> Add new movie
+        </button>
+      </div>
+      <movie-details [movie]="selectedMovie"></movie-details>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

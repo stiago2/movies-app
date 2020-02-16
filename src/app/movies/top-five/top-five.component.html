@@ -1,1 +1,10 @@
-<p>top-five works!</p>
+<div class="top-five-container">
+  <h1 mat-subheader>Top 5 Movies</h1>
+  <div class="movie-item" *ngFor="let movie of movies">
+    <img class="thumbnail" [src]="movie.image" [alt]="movie.description" />
+    <div class="details">
+      <h4 mat-line>{{ movie.title }}</h4>
+      <p mat-line>{{ movie.release | date }}</p>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-export interface IMovie {
+export interface IItemSettings {
   title: string;
-  release: string;
   description: string;
+  release: string;
   image: string;
 }

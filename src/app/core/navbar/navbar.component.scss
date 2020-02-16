@@ -1,7 +1,18 @@
 @import "../../../styles.scss";
-.active {
-  color: $accent-color;
-}
-h1 {
-  flex-grow: 1;
+.navbar {
+  height: $navbar-height;
+  .logo-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .navbar-menu {
+    .active {
+      color: $accent-color;
+    }
+    .link-icon {
+      margin: 0 8px;
+    }
+  }
 }

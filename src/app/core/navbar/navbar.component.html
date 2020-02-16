@@ -1,19 +1,30 @@
-<mat-toolbar color="warn">
+<mat-toolbar color="warn" class="navbar">
   <mat-toolbar-row>
-    <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
-    <h1>Movies</h1>
+    <button mat-icon-button *ngIf="(isHandset$ | async) === true">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="logo-container">
+      <img
+        src="https://www.livingwaters.com/wp-content/uploads/2017/12/outreach-Movies-logo.jpg"
+        width="150"
+        height="50"
+        title="Home"
+        alt="Home"
+        class="ng-star-inserted"
+      />
+    </div>
     <span class="menu-spacer"></span>
-    <div>
+    <div *ngIf="(isHandset$ | async) === false" class="navbar-menu">
       <a mat-button [routerLink]="'movies'" routerLinkActive="active">
-        <mat-icon>home</mat-icon>
+        <mat-icon class="link-icon">home</mat-icon>
         <span>HOME</span>
       </a>
       <a mat-button [routerLink]="'add-movie'" routerLinkActive="active">
-        <mat-icon>add</mat-icon>
+        <mat-icon class="link-icon">add</mat-icon>
         <span>ADD MOVIE</span>
       </a>
       <a mat-button [routerLink]="'top-five'" routerLinkActive="active">
-        <mat-icon>list</mat-icon>
+        <mat-icon class="link-icon">format_list_numbered</mat-icon>
         <span>TOP FIVE</span>
       </a>
     </div>

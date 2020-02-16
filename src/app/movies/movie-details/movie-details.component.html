@@ -1,0 +1,15 @@
+<mat-card class="movie-details-container" *ngIf="movie">
+  <mat-card-header>
+    <mat-card-title>{{ movie?.title | titlecase }}</mat-card-title>
+    <mat-card-subtitle>{{ movie?.release | date }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="movie-details">
+    <img
+      class="movie-image"
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      alt="Photo of a Shiba Inu"
+    />
+    <div class="description">{{ movie?.description }}</div>
+  </mat-card-content>
+</mat-card>

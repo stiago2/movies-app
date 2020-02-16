@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { CoreModule } from "@core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MoviesModule } from "./movies/movies.module";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +15,8 @@ import { MoviesModule } from "./movies/movies.module";
     MoviesModule,
     AppRoutingModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

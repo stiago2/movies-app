@@ -1,0 +1,24 @@
+@import "../../../styles.scss";
+.top-five-container {
+  width: 90%;
+  margin: 20px auto;
+  overflow-y: auto;
+  height: 90%;
+  .movie-item {
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid $divider-color;
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    .thumbnail {
+      width: 90px;
+      height: 90px;
+      margin-right: 20px;
+    }
+  }
+}
