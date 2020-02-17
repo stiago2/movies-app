@@ -1,0 +1,26 @@
+.form-container {
+  width: 50%;
+  margin: 20px auto;
+  height: 80%;
+  padding: 25px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      button {
+        width: 100%;
+      }
+    }
+  }
+  .new-movie-form {
+    display: flex;
+    flex-direction: column;
+    mat-form-field {
+      margin-top: 15px;
+    }
+  }
+}

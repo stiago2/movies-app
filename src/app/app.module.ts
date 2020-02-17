@@ -7,6 +7,8 @@ import { CoreModule } from "@core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MoviesModule } from "./movies/movies.module";
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { CanDeactivateGuard } from "@core/can-deactivate.guard";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,9 +18,11 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     CoreModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

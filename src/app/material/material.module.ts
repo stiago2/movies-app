@@ -6,6 +6,10 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatCardModule } from "@angular/material/card";
 import { MatListModule } from "@angular/material/list";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatInputModule } from "@angular/material/input";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [],
@@ -16,7 +20,11 @@ import { MatListModule } from "@angular/material/list";
     MatIconModule,
     MatSidenavModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatDialogModule
   ],
   exports: [
     MatProgressSpinnerModule,
@@ -25,7 +33,11 @@ import { MatListModule } from "@angular/material/list";
     MatIconModule,
     MatSidenavModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {}

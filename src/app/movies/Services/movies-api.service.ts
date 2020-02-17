@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpResponse } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { IMovie } from "../Models/IMovie.interface";
 import { map } from "rxjs/operators";
-import { AdapterService } from "@core/Services/adapter.service";
+import { AdapterService } from "./adapter.service";
 
 @Injectable({
   providedIn: "root"
@@ -16,7 +16,7 @@ export class MoviesApiService {
     return this.http
       .get(this.url)
       .pipe(
-        map((data: any[]) => data.movies.map(item => this.adapter.adapt(item)))
+        map((data: any) => data.movies.map(item => this.adapter.adapt(item)))
       );
   }
 }

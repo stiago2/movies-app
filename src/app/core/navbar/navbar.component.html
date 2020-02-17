@@ -1,8 +1,27 @@
 <mat-toolbar color="warn" class="navbar">
   <mat-toolbar-row>
-    <button mat-icon-button *ngIf="(isHandset$ | async) === true">
+    <button
+      mat-icon-button
+      *ngIf="(isHandset$ | async) === true"
+      [matMenuTriggerFor]="menu"
+    >
       <mat-icon>menu</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="navigate('/movies')">
+        <mat-icon class="link-icon">home</mat-icon>
+        <span>HOME</span>
+      </button>
+      <button mat-menu-item (click)="navigate('/add-movie')">
+        <mat-icon class="link-icon">add</mat-icon>
+        <span>ADD MOVIE</span>
+      </button>
+      <button mat-menu-item (click)="navigate('/top-five')">
+        <mat-icon class="link-icon">format_list_numbered</mat-icon>
+        <span>TOP FIVE</span>
+      </button>
+    </mat-menu>
+
     <div class="logo-container">
       <img
         src="https://www.livingwaters.com/wp-content/uploads/2017/12/outreach-Movies-logo.jpg"

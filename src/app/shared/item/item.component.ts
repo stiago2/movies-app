@@ -9,8 +9,13 @@ import { Item } from "@core/Models/Item.class";
 export class ItemComponent {
   @Input() item: Item;
   @Input() index: number;
+  @Input() set selectedIndex(index: number) {
+    this.selected = this.index === index;
+  }
   @Output() onSelect = new EventEmitter<Item>();
   @Output() onRemove = new EventEmitter<number>();
+  selected = false;
+
   constructor() {}
 
   onClick() {

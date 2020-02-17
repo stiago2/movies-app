@@ -1,11 +1,16 @@
 .movie-details-container {
   .movie-details {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    padding: 20px;
     img.movie-image {
-      width: 250px;
-      height: 250px;
-      margin-right: 10px;
+      width: 257px;
+      margin-top: 25px;
+      padding-bottom: 20px;
+    }
+    .description {
+      line-height: 20px;
+      font-size: 15px;
     }
   }
 }

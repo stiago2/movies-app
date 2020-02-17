@@ -1,1 +1,48 @@
-<p>add-movie works!</p>
+<div class="form-container">
+  <div class="header">
+    <h1 mat-subheader>Add new movie</h1>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="saveMovie()"
+      [disabled]="!this.newMovieForm.valid"
+    >
+      <mat-icon>add</mat-icon> Save Movie
+    </button>
+  </div>
+
+  <form [formGroup]="newMovieForm" class="new-movie-form">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        formControlName="title"
+        placeholder=""
+        maxlength="25"
+        required
+      />
+      <mat-error> Title is <strong>required</strong> </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Release Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="release" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error> Release Date is <strong>required</strong> </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5"
+        formControlName="description"
+        maxlength="550"
+      ></textarea>
+      <mat-error> Description is <strong>required</strong> </mat-error>
+    </mat-form-field>
+    <file-input (onLoad)="loadFile($event)"></file-input>
+  </form>
+</div>

@@ -1,0 +1,4 @@
+<div class="file-input-container">
+  <input type="file" (change)="onFileChange($event)" />
+  <img class="thumbnail" [src]="imageSource" *ngIf="imageSource" />
+</div>

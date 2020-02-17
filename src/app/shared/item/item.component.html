@@ -1,7 +1,7 @@
-<div class="item">
+<div class="item" [ngClass]="{ selected: selected }">
   <div class="movie-details-container" (click)="onClick()">
-    <h4 class="title">{{ item?.title }}</h4>
-    <div class="description">{{ item?.description }}</div>
+    <h4 class="title">{{ item?.title | titlecase }}</h4>
+    <div class="description">{{ item?.description | titlecase }}</div>
   </div>
   <div class="actions">
     <mat-icon (click)="remove($event)">delete</mat-icon>

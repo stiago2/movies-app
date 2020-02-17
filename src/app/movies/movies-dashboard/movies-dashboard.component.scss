@@ -6,8 +6,6 @@
     padding: 30px 20px;
     top: $navbar-height !important;
     width: $sidenav-width;
-    .movies-list {
-    }
   }
   .sidenav-content {
     padding: 35px;
@@ -18,7 +16,7 @@
       left: 5px;
     }
     .movie-details-container {
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
       .add-button-container {
         width: 100%;
