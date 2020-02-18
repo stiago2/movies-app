@@ -8,6 +8,11 @@
       margin-top: 25px;
       padding-bottom: 20px;
     }
+    @media only screen and (max-width: 600px) {
+      img.movie-image {
+        width: 100%;
+      }
+    }
     .description {
       line-height: 20px;
       font-size: 15px;
