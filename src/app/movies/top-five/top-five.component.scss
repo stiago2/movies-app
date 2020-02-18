@@ -1,9 +1,6 @@
 @import "../../../styles.scss";
 .top-five-container {
-  width: 50%;
-  margin: 20px auto;
-  height: 80%;
-  padding: 25px;
+  @include section-container();
   .movie-item {
     padding: 5px;
     display: flex;

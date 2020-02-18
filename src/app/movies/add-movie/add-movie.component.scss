@@ -1,8 +1,6 @@
+@import "../../../styles.scss";
 .form-container {
-  width: 50%;
-  margin: 20px auto;
-  height: 80%;
-  padding: 25px;
+  @include section-container();
   .header {
     display: flex;
     justify-content: space-between;

@@ -4,3 +4,10 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@mixin section-container() {
+  width: 50%;
+  margin: 20px auto;
+  height: 80%;
+  padding: 25px;
+}

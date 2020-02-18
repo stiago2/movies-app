@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot
 } from "@angular/router";
 
-import { ICanDeactivate } from "./Models/ICanDeactivate.interface";
+import { ICanDeactivate } from "../Models/ICanDeactivate.interface";
 
 @Injectable()
 export class CanDeactivateGuard implements CanDeactivate<ICanDeactivate> {

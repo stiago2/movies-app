@@ -18,13 +18,17 @@ export class TopFiveComponent implements OnInit {
   constructor(
     private moviesApiService: MoviesApiService,
     private eventBusService: EventBusService
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.getTopFiveMovies();
+  }
+
+  getTopFiveMovies() {
     this.eventBusService.emit(new EmitEvent(Events.onLoading, true));
     this.moviesApiService.getTopFiveMovies().subscribe(data => {
       this.movies = data;
       this.eventBusService.emit(new EmitEvent(Events.onLoading, false));
     });
   }
-
-  ngOnInit() {}
 }

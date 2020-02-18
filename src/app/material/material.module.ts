@@ -10,6 +10,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatInputModule } from "@angular/material/input";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatMenuModule,
     MatInputModule,
     MatDatepickerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   exports: [
     MatProgressSpinnerModule,
@@ -37,7 +39,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatMenuModule,
     MatInputModule,
     MatDatepickerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule {}

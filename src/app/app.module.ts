@@ -6,9 +6,11 @@ import { AppComponent } from "./app.component";
 import { CoreModule } from "@core/core.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MoviesModule } from "./movies/movies.module";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { CanDeactivateGuard } from "@core/can-deactivate.guard";
+import { CanDeactivateGuard } from "@core/Guards/can-deactivate.guard";
+import { HttpErrorInterceptor } from "@core/Interceptors/http-error.interceptor";
+import { NotificationPopupComponent } from "@shared/notification-popup/notification-popup.component";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +24,15 @@ import { CanDeactivateGuard } from "@core/can-deactivate.guard";
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [CanDeactivateGuard],
+  providers: [
+    CanDeactivateGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ],
+  entryComponents: [NotificationPopupComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,13 @@
+@import "../../../styles.scss";
+.notification-container {
+  &.error {
+    color: $error-color;
+  }
+  &.success {
+    color: $success-color;
+  }
+  h4 {
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+}

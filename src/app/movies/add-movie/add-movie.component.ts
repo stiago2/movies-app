@@ -1,7 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { MoviesService } from "../Services/movies.service";
 import { Validators, FormBuilder } from "@angular/forms";
-import { release } from "os";
 import { Router } from "@angular/router";
 import {
   EventBusService,
@@ -20,7 +19,7 @@ export class AddMovieComponent implements ICanDeactivate {
     title: ["", Validators.compose([Validators.required])],
     release: ["", Validators.compose([Validators.required])],
     image: ["", Validators.compose([Validators.required])],
-    description: ["", Validators.compose([Validators.required])]
+    description: [""]
   });
   canDeactivate() {
     return this.newMovieForm.dirty && this.newMovieForm.touched
@@ -49,8 +48,9 @@ export class AddMovieComponent implements ICanDeactivate {
       description: this.newMovieForm.get("description").value
     });
     setTimeout(() => {
+      this.newMovieForm.markAsUntouched();
       this.eventBusService.emit(new EmitEvent(Events.onLoading, false));
       this.router.navigate(["/movies"]);
-    }, 500);
+    });
   }
 }

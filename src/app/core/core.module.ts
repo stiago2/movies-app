@@ -1,8 +1,8 @@
 import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { EnsureModuleLoadedOnceGuard } from "./ensure-module-loaded-once.guard";
-import { LoadingComponent } from "./loading/loading.component";
-import { NavbarComponent } from "./navbar/navbar.component";
+import { EnsureModuleLoadedOnceGuard } from "./Guards/ensure-module-loaded-once.guard";
+import { LoadingComponent } from "./Components/loading/loading.component";
+import { NavbarComponent } from "./Components/navbar/navbar.component";
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "app/material/material.module";
 
